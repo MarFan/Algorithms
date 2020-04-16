@@ -7,8 +7,7 @@ def recipe_batches(recipe, ingredients):
 
 	for key in recipe:
 		if key not in ingredients:
-			tots_batch = 0 # missing an ingredient, can make the dish
-			return tots_batch	
+			return 0
 		elif key in ingredients and tots_batch == None or ingredients[key] // recipe[key] < tots_batch:
 				tots_batch = ingredients[key] // recipe[key]
 
