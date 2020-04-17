@@ -3,8 +3,15 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
+	tots_batch = None
 
+	for key in recipe:
+		if key not in ingredients:
+			return 0
+		elif key in ingredients and tots_batch == None or ingredients[key] // recipe[key] < tots_batch:
+				tots_batch = ingredients[key] // recipe[key]
+
+	return tots_batch
 
 if __name__ == '__main__':
   # Change the entries of these dictionaries to test 
